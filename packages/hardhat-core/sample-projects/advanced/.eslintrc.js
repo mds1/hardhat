@@ -14,4 +14,14 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: "module",
   },
+  overrides: [
+    {
+      files: ["scripts/**"],
+      rules: { "no-process-exit": "off" },
+    },
+    {
+      files: ["hardhat.config.js", "scripts/**", "test/**"],
+      rules: { "node/no-unpublished-require": "off" },
+    },
+  ],
 };

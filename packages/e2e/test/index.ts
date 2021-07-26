@@ -94,8 +94,9 @@ describe("e2e tests", function () {
       shell.exec("node scripts/sample-script.js");
       shell.exec("REPORT_GAS=true npx hardhat test");
       shell.exec(`${hardhatBinary} coverage`);
-      shell.exec("npx eslint '**'");
-      shell.exec("npx eslint '**' --fix");
+      shell.exec("npx eslint '**/*.js'");
+      shell.exec("npx eslint '**/*.js' --fix");
+      shell.exec("npx prettier '**/*.{json,sol,md}' --check");
       shell.exec("npx solhint '**/*.sol'");
       shell.exec("npx solhint '**/*.sol' --fix");
     });
